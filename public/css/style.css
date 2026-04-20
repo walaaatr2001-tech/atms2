@@ -1,0 +1,137 @@
+/* AT-AMS Custom Styles */
+:root {
+    --at-blue: #0066CC;
+    --at-blue-dark: #0052A3;
+    --at-green: #00AA44;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.2s ease;
+}
+
+/* Card hover effect */
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-at-blue text-white px-4 py-2 rounded-lg hover:bg-at-blue-dark;
+}
+
+.btn-success {
+    @apply bg-at-green text-white px-4 py-2 rounded-lg hover:opacity-90;
+}
+
+.btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700;
+}
+
+/* Status badges */
+.status-draft {
+    @apply bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs;
+}
+
+.status-submitted {
+    @apply bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs;
+}
+
+.status-validated {
+    @apply bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs;
+}
+
+.status-rejected {
+    @apply bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs;
+}
+
+.status-archived {
+    @apply bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-xs;
+}
+
+/* Form styles */
+.form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-at-blue focus:border-transparent;
+}
+
+.form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Table styles */
+.table-container {
+    @apply overflow-x-auto bg-white rounded-lg shadow;
+}
+
+.data-table {
+    @apply w-full text-sm text-left;
+}
+
+.data-table thead {
+    @apply bg-gray-50 text-gray-600 uppercase text-xs;
+}
+
+.data-table th {
+    @apply px-6 py-3 font-semibold;
+}
+
+.data-table td {
+    @apply px-6 py-4 border-b border-gray-100;
+}
+
+.data-table tbody tr:hover {
+    @apply bg-gray-50;
+}
+
+/* Loading spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--at-blue);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+    @apply bg-white rounded-xl shadow-2xl max-w-lg w-full mx-4;
+}
+
+/* Sidebar active */
+.sidebar-link {
+    @apply flex items-center px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-at-blue transition-colors;
+}
+
+.sidebar-link.active {
+    @apply bg-blue-50 text-at-blue border-l-4 border-at-blue;
+}
